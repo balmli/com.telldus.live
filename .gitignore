@@ -2,4 +2,8 @@ env.json
 *.iml
 .idea
 node_modules/*
+!node_modules/debug
+!node_modules/ms
+!node_modules/node-fetch
+!node_modules/oauth-1.0a
 test/
