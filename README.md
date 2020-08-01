@@ -17,7 +17,7 @@ To create OAuth tokens:
 - Click on "Generate a private token for my user only", and follow the instructions.
 
 Then install the "Telldus Live" device from the app.  
-Enter the public key, secret key, token key and token secret that you created.
+Enter the public key, private key, token and token secret that you created.
 
 Now you can install sensors and switches.
 

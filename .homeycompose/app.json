@@ -1,14 +1,16 @@
 {
   "id": "com.telldus.live",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "compatibility": ">=2.0.0",
   "sdk": 2,
-  "brandColor": "#004B88",
+  "brandColor": "#C67641",
   "name": {
-    "en": "Telldus Live"
+    "en": "Telldus Live",
+    "no": "Telldus Live"
   },
   "description": {
-    "en": "Connect to your Tellus Live"
+    "en": "Connect devices and sensors from Tellus Live",
+    "no": "Koble til enheter fra Tellus Live"
   },
   "category": [
     "lights"
@@ -16,6 +18,12 @@
   "tags": {
     "en": [
       "telldus",
+      "live",
+      "lights"
+    ],
+    "no": [
+      "telldus",
+      "live",
       "lights"
     ]
   },

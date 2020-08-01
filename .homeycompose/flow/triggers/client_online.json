@@ -1,7 +1,8 @@
 {
   "id": "client_online",
   "title": {
-    "en": "The client is back online"
+    "en": "The client is back online",
+    "no": "Klienten er online igjen"
   },
   "args": [
     {
@@ -15,7 +16,8 @@
       "name": "clientId",
       "type": "string",
       "title": {
-        "en": "Client Id"
+        "en": "Client Id",
+        "no": "Klient Id"
       },
       "example": "123"
     },
@@ -23,7 +25,8 @@
       "name": "clientName",
       "type": "string",
       "title": {
-        "en": "Client name"
+        "en": "Client name",
+        "no": "Klientnavn"
       },
       "example": "123"
     }

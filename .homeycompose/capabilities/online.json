@@ -1,16 +1,20 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Online"
+    "en": "Online",
+    "no": "Online"
   },
   "desc": {
-    "en": "The client is online"
+    "en": "The client is online",
+    "no": "Klienten er online"
   },
   "titleTrue": {
-    "en": "Online"
+    "en": "Online",
+    "no": "Online"
   },
   "titleFalse": {
-    "en": "Offline"
+    "en": "Offline",
+    "no": "Offline"
   },
   "getable": true,
   "setable": false,
