@@ -1,0 +1,19 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Online"
+  },
+  "desc": {
+    "en": "The client is online"
+  },
+  "titleTrue": {
+    "en": "Online"
+  },
+  "titleFalse": {
+    "en": "Offline"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": false,
+  "icon": "/assets/online.svg"
+}

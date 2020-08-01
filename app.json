@@ -1,0 +1,294 @@
+{
+  "id": "com.telldus.live",
+  "version": "0.0.1",
+  "compatibility": ">=2.0.0",
+  "sdk": 2,
+  "brandColor": "#004B88",
+  "name": {
+    "en": "Telldus Live"
+  },
+  "description": {
+    "en": "Connect to your Tellus Live"
+  },
+  "category": [
+    "lights"
+  ],
+  "tags": {
+    "en": [
+      "telldus",
+      "lights"
+    ]
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "permissions": [],
+  "author": {
+    "name": "Bjørnar Almli",
+    "email": "bjornar.almli@gmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Bjørnar Almli",
+        "email": "bjornar.almli@gmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "bjornaralmli"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/balmli/com.telldus.live/issues"
+  },
+  "homeyCommunityTopicId": 666,
+  "source": "https://github.com/balmli/com.telldus.live",
+  "flow": {
+    "triggers": [
+      {
+        "id": "client_offline",
+        "title": {
+          "en": "The client is offline"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ClientLive|ClientLocal"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "clientId",
+            "type": "string",
+            "title": {
+              "en": "Client Id"
+            },
+            "example": "123"
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "title": {
+              "en": "Client name"
+            },
+            "example": "123"
+          }
+        ]
+      },
+      {
+        "id": "client_online",
+        "title": {
+          "en": "The client is back online"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ClientLive|ClientLocal"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "clientId",
+            "type": "string",
+            "title": {
+              "en": "Client Id"
+            },
+            "example": "123"
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "title": {
+              "en": "Client name"
+            },
+            "example": "123"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "id": "ClientLive",
+      "name": {
+        "en": "Telldus Live"
+      },
+      "icon": "/drivers/ClientLive/assets/icon.svg",
+      "images": {
+        "large": "/drivers/ClientLive/assets/images/large.png",
+        "small": "/drivers/ClientLive/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "online"
+      ],
+      "pair": [
+        {
+          "id": "enter_keys"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "Polling_Interval",
+          "type": "number",
+          "label": {
+            "en": "Polling interval"
+          },
+          "value": 60,
+          "min": 10,
+          "max": 300,
+          "hint": {
+            "en": "Polling interval (seconds)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ClientLocal",
+      "name": {
+        "en": "Telldus Local"
+      },
+      "icon": "/drivers/ClientLocal/assets/icon.svg",
+      "images": {
+        "large": "/drivers/ClientLocal/assets/images/large.png",
+        "small": "/drivers/ClientLocal/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "online"
+      ],
+      "pair": [
+        {
+          "id": "enter_ip"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "Polling_Interval",
+          "type": "number",
+          "label": {
+            "en": "Polling interval"
+          },
+          "value": 60,
+          "min": 10,
+          "max": 300,
+          "hint": {
+            "en": "Polling interval (seconds)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Sensor",
+      "name": {
+        "en": "Telldus Sensor"
+      },
+      "icon": "/drivers/Sensor/assets/icon.svg",
+      "images": {
+        "large": "/drivers/Sensor/assets/images/large.png",
+        "small": "/drivers/Sensor/assets/images/small.png"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_power",
+        "measure_voltage",
+        "meter_power"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": []
+    },
+    {
+      "id": "Switch",
+      "name": {
+        "en": "Telldus Switch"
+      },
+      "icon": "/drivers/Switch/assets/icon.svg",
+      "images": {
+        "large": "/drivers/Switch/assets/images/large.png",
+        "small": "/drivers/Switch/assets/images/small.png"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": []
+    }
+  ],
+  "capabilities": {
+    "online": {
+      "type": "boolean",
+      "title": {
+        "en": "Online"
+      },
+      "desc": {
+        "en": "The client is online"
+      },
+      "titleTrue": {
+        "en": "Online"
+      },
+      "titleFalse": {
+        "en": "Offline"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": false,
+      "icon": "/assets/online.svg"
+    }
+  }
+}

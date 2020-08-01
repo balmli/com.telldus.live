@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="material-components-web.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_logo">
+            <img class="logo" src="logo.svg" alt="TelldusLive"/>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
+            <span data-i18n="pair.public_key_label" class="mdc-typography--subtitle2">Public key:</span>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
+            <div class="mdc-text-field">
+                <input class="mdc-text-field__input input_field"
+                       id="public_key"
+                       maxlength="100">
+                <div class="mdc-line-ripple"></div>
+                <label for="public_key" class="mdc-floating-label"></label>
+            </div>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
+            <span data-i18n="pair.secret_key_label" class="mdc-typography--subtitle2">Secret key:</span>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
+            <div class="mdc-text-field">
+                <input class="mdc-text-field__input input_field"
+                       id="secret_key"
+                       maxlength="100">
+                <div class="mdc-line-ripple"></div>
+                <label for="secret_key" class="mdc-floating-label"></label>
+            </div>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
+            <span data-i18n="pair.token_key_label" class="mdc-typography--subtitle2">Token key:</span>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
+            <div class="mdc-text-field">
+                <input class="mdc-text-field__input input_field"
+                       id="token_key"
+                       maxlength="100">
+                <div class="mdc-line-ripple"></div>
+                <label for="token_key" class="mdc-floating-label"></label>
+            </div>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
+            <span data-i18n="pair.token_secret_label" class="mdc-typography--subtitle2">Token secret:</span>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
+            <div class="mdc-text-field">
+                <input class="mdc-text-field__input input_field"
+                       id="token_secret"
+                       maxlength="100">
+                <div class="mdc-line-ripple"></div>
+                <label for="token_secret" class="mdc-floating-label"></label>
+            </div>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center grid_space">
+            <button class="mdc-button mdc-button--raised save_button"
+                    id="next"
+                    style="color: white; background-color: #00c341;">
+                <span data-i18n="pair.next_btn" class="mdc-button__label ">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    Homey.setTitle(Homey.__('pair.title'));
+
+    document.getElementById('next').onclick = (e) => {
+        e.preventDefault();
+        Homey.showLoadingOverlay();
+        Homey.emit('keys_entered', {
+            public_key: document.getElementById("public_key").value,
+            secret_key: document.getElementById("secret_key").value,
+            token_key: document.getElementById("token_key").value,
+            token_secret: document.getElementById("token_secret").value
+        }, (err, result) => {
+            Homey.hideLoadingOverlay();
+            if (err) {
+                Homey.alert(Homey.__('pair.invalid_keys'), 'error', () => {
+                    Homey.done();
+                });
+            } else if (result) {
+                //Homey.showView('list_devices');
+            }
+        });
+    };
+</script>
+<script src="material-components-web.min.js"></script>
+</body>
+</html>

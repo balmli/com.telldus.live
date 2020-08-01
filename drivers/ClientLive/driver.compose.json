@@ -1,0 +1,32 @@
+
+{
+  "id": "ClientLive",
+  "name": {
+    "en": "Telldus Live"
+  },
+  "icon": "{{driverAssetsPath}}/icon.svg",
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "class": "other",
+  "capabilities": [
+    "online"
+  ],
+  "pair": [
+    {
+      "id": "enter_keys"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_my_devices"
+      }
+    },
+    {
+      "id": "add_my_devices",
+      "template": "add_devices"
+    }
+  ]
+}

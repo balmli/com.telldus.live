@@ -1,0 +1,31 @@
+{
+  "id": "client_online",
+  "title": {
+    "en": "The client is back online"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=ClientLive|ClientLocal"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "clientId",
+      "type": "string",
+      "title": {
+        "en": "Client Id"
+      },
+      "example": "123"
+    },
+    {
+      "name": "clientName",
+      "type": "string",
+      "title": {
+        "en": "Client name"
+      },
+      "example": "123"
+    }
+  ]
+}

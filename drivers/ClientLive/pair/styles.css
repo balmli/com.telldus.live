@@ -1,0 +1,54 @@
+.grid_status_table {
+    min-width: 100%;
+}
+
+.grid_status_label {
+    font-size: 10pt;
+    padding-left: 10px !important;
+}
+
+.grid_status_info {
+    font-family: "Courier New", serif;
+    font-size: 9pt;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.grid_center {
+    text-align: center;
+}
+
+.grid_space {
+    margin-top: 40px;
+}
+
+.grid_logo {
+    text-align: center;
+}
+
+.logo {
+    width: 80%;
+    min-height: 150px;
+}
+
+.input_field {
+    text-align: center;
+    font-family: "Courier New", serif;
+    font-size: 12pt;
+}
+
+.exec_button {
+    min-width: 100%;
+    background-color: #00c341;
+    color: white;
+}
+
+.save_button {
+    background-color: #00c341;
+    color: white;
+}
+
+.cancel_button {
+    background-color: #a8a8a8;
+    color: white;
+}

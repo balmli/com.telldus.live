@@ -1,0 +1,28 @@
+{
+  "id": "Switch",
+  "name": {
+    "en": "Telldus Switch"
+  },
+  "icon": "{{driverAssetsPath}}/icon.svg",
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_my_devices"
+      }
+    },
+    {
+      "id": "add_my_devices",
+      "template": "add_devices"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "pair": {
+    "title": "Telldus Live",
+    "public_key_label": "Public key:",
+    "secret_key_label": "Secret key:",
+    "token_key_label": "Token key:",
+    "token_secret_label": "Token secret:",
+    "next_btn": "Next",
+    "invalid_keys": "Invalid keys"
+  }
+}
