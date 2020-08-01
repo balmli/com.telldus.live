@@ -1,6 +1,7 @@
 'use strict';
 
 const Homey = require('homey');
+const constantsDriver = require('../../lib/constants');
 
 module.exports = class SensorDriver extends Homey.Driver {
 
@@ -12,7 +13,10 @@ module.exports = class SensorDriver extends Homey.Driver {
             for (let api of apis) {
                 const telldusClientId = api.clientId;
                 const online = true;
-                const telldusSensors = await api.api.listSensors({ telldusClientId, online });
+                const telldusSensors = await api.api.listSensors({
+                    telldusClientId: api.driverId === constantsDriver.DRIVER_CLIENT_LIVE ? telldusClientId : undefined,
+                    online
+                });
 
                 for (let telldusSensor of telldusSensors) {
                     if (telldusSensor.data && telldusSensor.data.length > 0) {
@@ -36,7 +40,8 @@ module.exports = class SensorDriver extends Homey.Driver {
                             devices.push({
                                 "name": `${telldusSensor.name}${api.shortName ? ' (' + api.shortName + ')' : ''}`,
                                 "data": {
-                                    "id": telldusSensor.id
+                                    "id": telldusSensor.id,
+                                    "clientId": telldusClientId
                                 },
                                 "capabilities": capabilities
                             });

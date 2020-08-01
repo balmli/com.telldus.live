@@ -73,7 +73,8 @@ module.exports = class TelldusLiveApp extends Homey.App {
                         apis.push({
                             shortName: device.getShortName(),
                             api: device.getApi(),
-                            clientId: driverId === constants.DRIVER_CLIENT_LIVE ? device.getId() : undefined
+                            clientId: device.getId(),
+                            driverId: driverId
                         });
                     }
                 }

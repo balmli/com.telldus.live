@@ -13,7 +13,6 @@ module.exports = class SwitchDevice extends BaseDevice {
     onSwitchValue(device) {
         try {
             if (device && device.id === this.getId()) {
-                this.setClientId(device.client);
                 //this.log('onSwitchValue', this.getId(), device);
                 const onoff = device.state === '1' || device.state === 1;
                 //this.log(`${device.name}: ${onoff ? 'on' : 'off'}`);
