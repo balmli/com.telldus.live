@@ -1,6 +1,6 @@
 {
   "name": "com.telldus.live",
-  "version": "0.0.2",
+  "version": "0.9.0",
   "description": "Telldus Live app for Athom Homey",
   "main": "app.js",
   "scripts": {

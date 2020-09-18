@@ -1,6 +1,6 @@
 {
   "id": "com.telldus.live",
-  "version": "0.0.2",
+  "version": "0.9.0",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "brandColor": "#C67641",
@@ -54,6 +54,6 @@
   "bugs": {
     "url": "https://github.com/balmli/com.telldus.live/issues"
   },
-  "homeyCommunityTopicId": 666,
+  "homeyCommunityTopicId": 34779,
   "source": "https://github.com/balmli/com.telldus.live"
 }

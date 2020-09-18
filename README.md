@@ -2,7 +2,7 @@
 
 With this app you can add sensors and switches from "Telldus Live".
 
-For "Telldus ZNET lite v2" - gatwways, a direct, local connection is also supported.
+For "Telldus ZNET lite v2" - gateways, a direct, local connection is also supported.
 
 
 ## Install:
@@ -48,6 +48,14 @@ Use at your own risk. I accept no responsibility for any damages caused by using
 
 
 ## Release Notes:
+
+#### 0.9.0
+
+- Release
+
+#### 0.0.2
+
+- Norwegian language
 
 #### 0.0.1
 
