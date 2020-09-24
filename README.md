@@ -49,6 +49,10 @@ Use at your own risk. I accept no responsibility for any damages caused by using
 
 ## Release Notes:
 
+#### 0.9.2
+
+- Minor bug fixes
+
 #### 0.9.1
 
 - Fix README and images

@@ -1,10 +1,13 @@
 {
   "pair": {
     "title": "Telldus Live",
+    "title_local": "Telldus Local",
     "public_key_label": "Public key:",
     "secret_key_label": "Private key:",
     "token_key_label": "Token:",
     "token_secret_label": "Token secret:",
+    "ip_address_label": "IP-adresse:",
+    "access_token_label": "Access token:",
     "next_btn": "Neste",
     "invalid_keys": "Ugyldige nøkler"
   }

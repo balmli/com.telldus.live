@@ -1,6 +1,6 @@
 {
   "id": "com.telldus.live",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "brandColor": "#C67641",
@@ -13,6 +13,7 @@
     "no": "Koble til enheter fra Tellus Live"
   },
   "category": [
+    "appliances",
     "lights"
   ],
   "tags": {
