@@ -1,4 +1,7 @@
 {
+  "1.0.0": {
+    "en": "Added support for dimmers."
+  },
   "0.9.2": {
     "en": "Minor bug fixes."
   },

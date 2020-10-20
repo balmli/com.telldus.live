@@ -2,5 +2,5 @@
 
 const BaseDevice = require('../../lib/BaseDevice');
 
-module.exports = class SwitchDevice extends BaseDevice {
+module.exports = class BulbDevice extends BaseDevice {
 };

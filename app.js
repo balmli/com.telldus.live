@@ -49,9 +49,14 @@ module.exports = class TelldusLiveApp extends Homey.App {
                     const driver = drivers[key];
                     const devices = driver.getDevices();
                     for (let device of devices) {
-                        if (device.getId && device.onSwitchValue) {
+                        if (device.getId) {
                             const telldusDevice = telldusDevices.find(d => d.id === device.getId());
-                            device.onSwitchValue(telldusDevice);
+                            if (device.hasCapability('onoff') && device.onSwitchValue) {
+                                device.onSwitchValue(telldusDevice);
+                            }
+                            if (device.hasCapability('dim') && device.onDimValue) {
+                                device.onDimValue(telldusDevice);
+                            }
                         }
                     }
                 }

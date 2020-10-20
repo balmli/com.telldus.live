@@ -4,14 +4,9 @@
   "name": {
     "en": "Telldus Live"
   },
-  "icon": "{{driverAssetsPath}}/icon.svg",
-  "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
-  },
-  "class": "other",
-  "capabilities": [
-    "online"
+  "$extends": [
+    "defaults",
+    "client"
   ],
   "pair": [
     {

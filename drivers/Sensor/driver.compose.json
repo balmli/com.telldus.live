@@ -3,11 +3,9 @@
   "name": {
     "en": "Telldus Sensor"
   },
-  "icon": "{{driverAssetsPath}}/icon.svg",
-  "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
-  },
+  "$extends": [
+    "defaults"
+  ],
   "class": "sensor",
   "capabilities": [
     "measure_temperature",

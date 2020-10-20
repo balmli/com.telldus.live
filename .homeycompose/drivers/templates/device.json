@@ -1,17 +1,10 @@
-
 {
-  "id": "ClientLocal",
-  "name": {
-    "en": "Telldus Local"
-  },
-  "$extends": [
-    "defaults",
-    "client"
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "dim"
   ],
   "pair": [
-    {
-      "id": "enter_ip"
-    },
     {
       "id": "list_devices",
       "template": "list_devices",

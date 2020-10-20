@@ -46,7 +46,7 @@ module.exports = class ClientDevice extends BaseClientDevice {
     async fetchDevicesValues() {
         const devices = await this._api.listDevices({
             telldusClientId: this.getId(),
-            filterDeviceType: constants.DEVICE_TYPES.switch
+            deviceTypes: [constants.DEVICE_TYPES.bulb, constants.DEVICE_TYPES.switch]
         })
         Homey.app.deviceValues(devices);
     }

@@ -1,4 +1,4 @@
-Med denne appen kan du legge til sensorer og brytere fra "Telldus Live".
+Med denne appen kan du legge til sensorer, dimmere og brytere fra "Telldus Live".
 
 For "Telldus ZNET lite v2" - gatewayer, støttes også direkte tilkobling.
 

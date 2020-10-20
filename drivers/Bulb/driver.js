@@ -3,18 +3,18 @@
 const constants = require('../../lib/telldus-api/constants');
 const BaseDriver = require('../../lib/BaseDriver');
 
-module.exports = class SwitchDriver extends BaseDriver {
+module.exports = class BulbDriver extends BaseDriver {
 
     getDeviceTypes() {
-        return [constants.DEVICE_TYPES.switch];
+        return [constants.DEVICE_TYPES.bulb];
     }
 
     getMethods() {
-        return [constants.commands.on, constants.commands.off];
+        return [constants.commands.dim];
     }
 
     getDefaultCapabilities() {
-        return ['onoff'];
+        return ['dim'];
     }
 
 };

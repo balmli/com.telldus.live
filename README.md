@@ -1,6 +1,6 @@
 # Telldus Live app for Athom Homey
 
-With this app you can add sensors and switches from "Telldus Live".
+With this app you can add sensors, dimmers and switches from "Telldus Live".
 
 For "Telldus ZNET lite v2" - gateways, a direct, local connection is also supported.
 
@@ -19,7 +19,7 @@ To create OAuth tokens:
 Then install the "Telldus Live" device from the app.  
 Enter the public key, private key, token and token secret that you created.
 
-Now you can install sensors and switches.
+Now you can install sensors, dimmers and switches.
 
 
 #### For Telldus Local:
@@ -39,7 +39,7 @@ Go back to the terminal, and you will see the access token.
 
 Then install the "Telldus Local" device from the app. Enter the access token that you created.
 
-Now you can install sensors and switches.
+Now you can install sensors, dimmers and switches.
 
 
 ## Disclaimer:
@@ -48,6 +48,10 @@ Use at your own risk. I accept no responsibility for any damages caused by using
 
 
 ## Release Notes:
+
+#### 1.0.0
+
+- Added support for dimmers
 
 #### 0.9.2
 

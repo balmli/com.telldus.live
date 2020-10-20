@@ -1,4 +1,4 @@
-With this app you can add sensors and switches from "Telldus Live".
+With this app you can add sensors, dimmers and switches from "Telldus Live".
 
 For "Telldus ZNET lite v2" - gateways, a direct, local connection is also supported.
 
