@@ -49,6 +49,10 @@ Use at your own risk. I accept no responsibility for any damages caused by using
 
 ## Release Notes:
 
+#### 1.0.1
+
+- Fix case for device types
+
 #### 1.0.0
 
 - Added support for dimmers
