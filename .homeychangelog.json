@@ -1,4 +1,7 @@
 {
+  "1.1.0": {
+    "en": "Support for battery status."
+  },
   "1.0.1": {
     "en": "Fix case for device types."
   },
