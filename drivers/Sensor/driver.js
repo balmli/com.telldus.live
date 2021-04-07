@@ -2,6 +2,7 @@
 
 const Homey = require('homey');
 const constantsDriver = require('../../lib/constants');
+const constantsTelldus = require('../../lib/telldus-api/constants');
 
 module.exports = class SensorDriver extends Homey.Driver {
 
@@ -19,8 +20,8 @@ module.exports = class SensorDriver extends Homey.Driver {
                 });
 
                 for (let telldusSensor of telldusSensors) {
+                    let capabilities = [];
                     if (telldusSensor.data && telldusSensor.data.length > 0) {
-                        let capabilities = [];
                         for (let val of telldusSensor.data) {
                             if (val.name === 'temp') {
                                 capabilities.push('measure_temperature');
@@ -36,16 +37,24 @@ module.exports = class SensorDriver extends Homey.Driver {
                                 }
                             }
                         }
-                        if (capabilities.length > 0) {
-                            devices.push({
-                                "name": `${telldusSensor.name}${api.shortName ? ' (' + api.shortName + ')' : ''}`,
-                                "data": {
-                                    "id": telldusSensor.id,
-                                    "clientId": telldusClientId
-                                },
-                                "capabilities": capabilities
-                            });
+                    }
+                    if (telldusSensor.battery) {
+                        let batteryValue = parseFloat(telldusSensor.battery);
+                        if (batteryValue == constantsTelldus.BATTERY_STATUS.ok || batteryValue == constantsTelldus.BATTERY_STATUS.low) {
+                            capabilities.push('alarm_battery');
+                        } else if (batteryValue >= 0 && batteryValue <= 100) {
+                            capabilities.push('measure_battery');
                         }
+                    }
+                    if (capabilities.length > 0) {
+                        devices.push({
+                            "name": `${telldusSensor.name}${api.shortName ? ' (' + api.shortName + ')' : ''}`,
+                            "data": {
+                                "id": telldusSensor.id,
+                                "clientId": telldusClientId
+                            },
+                            "capabilities": capabilities
+                        });
                     }
                 }
             }
@@ -53,6 +62,7 @@ module.exports = class SensorDriver extends Homey.Driver {
             callback(null, devices);
 
         } catch (err) {
+            this.log('onPairListDevices error', err);
             callback(new Error("Failed to retrieve sensors."));
         }
     }
