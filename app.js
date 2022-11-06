@@ -7,15 +7,7 @@ module.exports = class TelldusLiveApp extends Homey.App {
 
     onInit() {
         try {
-            Homey.on('unload', () => this._onUninstall());
-
-            this.triggerClientOffline = new Homey.FlowCardTriggerDevice('client_offline');
-            this.triggerClientOffline
-                .register();
-
-            this.triggerClientOnline = new Homey.FlowCardTriggerDevice('client_online');
-            this.triggerClientOnline
-                .register();
+            this.homey.on('unload', () => this._onUninstall());
 
             this.log('TelldusLiveApp is running...');
         } catch (err) {
@@ -24,7 +16,7 @@ module.exports = class TelldusLiveApp extends Homey.App {
     }
 
     sensorValues(telldusSensors) {
-        const drivers = Homey.ManagerDrivers.getDrivers();
+        const drivers = this.homey.drivers.getDrivers();
         if (drivers) {
             for (let key in drivers) {
                 if (drivers.hasOwnProperty(key)) {
@@ -42,7 +34,7 @@ module.exports = class TelldusLiveApp extends Homey.App {
     }
 
     deviceValues(telldusDevices) {
-        const drivers = Homey.ManagerDrivers.getDrivers();
+        const drivers = this.homey.drivers.getDrivers();
         if (drivers) {
             for (let key in drivers) {
                 if (drivers.hasOwnProperty(key)) {
@@ -67,7 +59,7 @@ module.exports = class TelldusLiveApp extends Homey.App {
     getApi(clientId) {
         const apis = [];
         for (let driverId of constants.DRIVER_CLIENTS) {
-            const driver = Homey.ManagerDrivers.getDriver(driverId);
+            const driver = this.homey.drivers.getDriver(driverId);
             if (driver) {
                 const devices = driver.getDevices();
                 for (let device of devices) {
@@ -97,7 +89,7 @@ module.exports = class TelldusLiveApp extends Homey.App {
     }
 
     _clearTimers() {
-        const drivers = Homey.ManagerDrivers.getDrivers();
+        const drivers = this.homey.drivers.getDrivers();
         if (drivers) {
             for (let key in drivers) {
                 if (drivers.hasOwnProperty(key)) {

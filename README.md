@@ -49,6 +49,10 @@ Use at your own risk. I accept no responsibility for any damages caused by using
 
 ## Release Notes:
 
+#### 1.2.0
+
+- Updated to SDK3
+
 #### 1.1.0
 
 - Support for battery status

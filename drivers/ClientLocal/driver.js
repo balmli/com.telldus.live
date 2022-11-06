@@ -6,8 +6,8 @@ const util = require('../../lib/util');
 
 module.exports = class ClientDriver extends Homey.Driver {
 
-    onPair(socket) {
-        socket.on('keys_entered', async (data, callback) => {
+    async onPair(session) {
+        session.setHandler('keys_entered', async (data) => {
             try {
                 this._keys = {
                     ip_address: data.ip_address,
@@ -18,14 +18,13 @@ module.exports = class ClientDriver extends Homey.Driver {
                 const accessToken = data.access_token;
                 this._api = new LocalApi({ host, accessToken, log: this.log });
 
-                socket.showView('list_devices');
-                callback(null, 'ok');
+                session.showView('list_devices');
             } catch (err) {
-                callback(err);
+                throw err;
             }
         });
 
-        socket.on('list_devices', async (data, callback) => {
+        session.setHandler('list_devices', async (data) => {
             try {
                 let devices = [];
                 devices.push({
@@ -38,9 +37,9 @@ module.exports = class ClientDriver extends Homey.Driver {
                         "keys": this._keys
                     }
                 });
-                callback(null, devices);
+                return devices;
             } catch (err) {
-                callback(err);
+                throw err;
             }
         });
     }

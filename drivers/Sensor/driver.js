@@ -6,9 +6,9 @@ const constantsTelldus = require('../../lib/telldus-api/constants');
 
 module.exports = class SensorDriver extends Homey.Driver {
 
-    async onPairListDevices(data, callback) {
+    async onPairListDevices() {
         try {
-            const apis = Homey.app.getApi();
+            const apis = this.homey.app.getApi();
             let devices = [];
 
             for (let api of apis) {
@@ -59,11 +59,11 @@ module.exports = class SensorDriver extends Homey.Driver {
                 }
             }
 
-            callback(null, devices);
+            return devices;
 
         } catch (err) {
             this.log('onPairListDevices error', err);
-            callback(new Error("Failed to retrieve sensors."));
+            throw new Error("Failed to retrieve sensors.");
         }
     }
 
