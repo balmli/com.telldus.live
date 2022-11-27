@@ -2,53 +2,33 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../../../assets/material-components-web.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_logo">
-            <img class="logo" src="logo.svg" alt="TelldusLive"/>
-        </div>
-
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <span data-i18n="pair.ip_address_label" class="mdc-typography--subtitle2">IP address:</span>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <div class="mdc-text-field">
-                <input class="mdc-text-field__input input_field"
-                       id="ip_address"
-                       maxlength="100">
-                <div class="mdc-line-ripple"></div>
-                <label for="ip_address" class="mdc-floating-label"></label>
-            </div>
-        </div>
-
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <span data-i18n="pair.access_token_label" class="mdc-typography--subtitle2">Access token:</span>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <div class="mdc-text-field">
-                <input class="mdc-text-field__input input_field"
-                       id="access_token"
-                       maxlength="255">
-                <div class="mdc-line-ripple"></div>
-                <label for="access_token" class="mdc-floating-label"></label>
-            </div>
-        </div>
-
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center grid_space">
-            <button class="mdc-button mdc-button--raised save_button"
-                    id="next"
-                    style="color: white; background-color: #00c341;">
-                <span data-i18n="pair.next_btn" class="mdc-button__label ">Next</span>
-            </button>
-        </div>
+<header class="homey-header">
+    <div class="grid_center">
+        <img class="logo" src="logo.svg" alt="TelldusLive"/>
     </div>
-</div>
+</header>
+
+<form class="homey-form">
+    <fieldset class="homey-form-fieldset">
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="ip_address" data-i18n="pair.ip_address_label">IP address:</label>
+            <input class="homey-form-input" id="ip_address" type="text" maxlength="100">
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="access_token" data-i18n="pair.access_token_label">Access token:</label>
+            <input class="homey-form-input" id="access_token" type="text" maxlength="255">
+        </div>
+    </fieldset>
+
+    <button class="homey-button-primary-full"
+            id="next"
+            data-i18n="pair.next_btn"
+    ></button>
+</form>
 
 <script type="text/javascript">
     Homey.setTitle(Homey.__('pair.title_local'));
@@ -71,6 +51,5 @@
         });
     };
 </script>
-<script src="../../../assets/material-components-web.min.js"></script>
 </body>
 </html>

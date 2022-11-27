@@ -2,79 +2,41 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../../../assets/material-components-web.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_logo">
-            <img class="logo" src="logo.svg" alt="TelldusLive"/>
-        </div>
-
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <span data-i18n="pair.public_key_label" class="mdc-typography--subtitle2">Public key:</span>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <div class="mdc-text-field">
-                <input class="mdc-text-field__input input_field"
-                       id="public_key"
-                       maxlength="100">
-                <div class="mdc-line-ripple"></div>
-                <label for="public_key" class="mdc-floating-label"></label>
-            </div>
-        </div>
-
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <span data-i18n="pair.secret_key_label" class="mdc-typography--subtitle2">Private key:</span>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <div class="mdc-text-field">
-                <input class="mdc-text-field__input input_field"
-                       id="secret_key"
-                       maxlength="100">
-                <div class="mdc-line-ripple"></div>
-                <label for="secret_key" class="mdc-floating-label"></label>
-            </div>
-        </div>
-
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <span data-i18n="pair.token_key_label" class="mdc-typography--subtitle2">Token:</span>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <div class="mdc-text-field">
-                <input class="mdc-text-field__input input_field"
-                       id="token_key"
-                       maxlength="100">
-                <div class="mdc-line-ripple"></div>
-                <label for="token_key" class="mdc-floating-label"></label>
-            </div>
-        </div>
-
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <span data-i18n="pair.token_secret_label" class="mdc-typography--subtitle2">Token secret:</span>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center">
-            <div class="mdc-text-field">
-                <input class="mdc-text-field__input input_field"
-                       id="token_secret"
-                       maxlength="100">
-                <div class="mdc-line-ripple"></div>
-                <label for="token_secret" class="mdc-floating-label"></label>
-            </div>
-        </div>
-
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 grid_center grid_space">
-            <button class="mdc-button mdc-button--raised save_button"
-                    id="next"
-                    style="color: white; background-color: #00c341;">
-                <span data-i18n="pair.next_btn" class="mdc-button__label ">Next</span>
-            </button>
-        </div>
+<header class="homey-header">
+    <div class="grid_center">
+        <img class="logo" src="logo.svg" alt="TelldusLive"/>
     </div>
-</div>
+</header>
+
+<form class="homey-form">
+    <fieldset class="homey-form-fieldset">
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="public_key" data-i18n="pair.public_key_label">Public key:</label>
+            <input class="homey-form-input" id="public_key" type="text" maxlength="100">
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="secret_key" data-i18n="pair.secret_key_label">Private key:</label>
+            <input class="homey-form-input" id="secret_key" type="text" maxlength="100">
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="token_key" data-i18n="pair.token_key_label">Token:</label>
+            <input class="homey-form-input" id="token_key" type="text" maxlength="100">
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="token_secret" data-i18n="pair.token_secret_label">Token secret:</label>
+            <input class="homey-form-input" id="token_secret" type="text" maxlength="100">
+        </div>
+    </fieldset>
+
+    <button class="homey-button-primary-full"
+            id="next"
+            data-i18n="pair.next_btn"
+    ></button>
+</form>
 
 <script type="text/javascript">
     Homey.setTitle(Homey.__('pair.title'));
@@ -99,6 +61,5 @@
         });
     };
 </script>
-<script src="../../../assets/material-components-web.min.js"></script>
 </body>
 </html>
