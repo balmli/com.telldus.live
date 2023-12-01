@@ -49,6 +49,10 @@ Use at your own risk. I accept no responsibility for any damages caused by using
 
 ## Release Notes:
 
+#### 1.3.1
+
+- Updated Telldus Live API URL
+
 #### 1.3.0
 
 - Updated pairing screens
